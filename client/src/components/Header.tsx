@@ -1,4 +1,4 @@
-import { Link } from '@tanstack/react-router'
+import { Link } from "@tanstack/react-router";
 
 export default function Header() {
   return (
@@ -9,6 +9,11 @@ export default function Header() {
       <Link to="/demo/tanstack-query" className="[&.active]:font-bold">
         TanStack Query
       </Link>
+      <div>
+        <Link to="/todos" className="[&.active]:font-bold">
+          Todos
+        </Link>
+      </div>
     </header>
-  )
+  );
 }

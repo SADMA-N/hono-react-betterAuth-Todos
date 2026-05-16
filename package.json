@@ -20,6 +20,7 @@
     "@types/bun": "latest",
     "@types/pg": "^8.20.0",
     "concurrently": "^9.2.1",
+    "daisyui": "^5.5.19",
     "drizzle-kit": "^0.31.10",
     "drizzle-seed": "^0.3.1"
   }
