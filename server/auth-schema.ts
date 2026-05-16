@@ -1,23 +1,5 @@
-import {
-  integer,
-  boolean,
-  pgTable,
-  uuid,
-  varchar,
-  timestamp,
-  text,
-  index,
-} from "drizzle-orm/pg-core";
-import { relations } from "drizzle-orm/relations";
-
-export const todos = pgTable("todos", {
-  id: uuid().primaryKey().defaultRandom(),
-  title: varchar({ length: 500 }).notNull(),
-  description: varchar({ length: 1000 }),
-  completed: boolean().default(false),
-  createdAt: timestamp({ withTimezone: true }).defaultNow(),
-  updatedAt: timestamp({ withTimezone: true }).defaultNow(),
-});
+import { relations } from "drizzle-orm";
+import { pgTable, text, timestamp, boolean, index } from "drizzle-orm/pg-core";
 
 export const user = pgTable("user", {
   id: text("id").primaryKey(),
