@@ -42,7 +42,7 @@ function RouteComponent() {
         to: "/todos",
       });
     } catch (err) {
-      setError("An unexpected error occured");
+      setError("An unexpected error occurred");
       console.error("Signup failed:", err);
     } finally {
       setLoading(false);
