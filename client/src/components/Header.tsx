@@ -6,9 +6,6 @@ export default function Header() {
       <Link to="/" className="[&.active]:font-bold">
         Home
       </Link>
-      <Link to="/demo/tanstack-query" className="[&.active]:font-bold">
-        TanStack Query
-      </Link>
       <div>
         <Link to="/todos" className="[&.active]:font-bold">
           Todos
