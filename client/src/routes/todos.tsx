@@ -1,8 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { hc } from "hono/client";
 import { useQuery } from "@tanstack/react-query";
 import { CircleX } from "lucide-react";
-// import { authClient } from "../lib/auth-client";
+import { authClient } from "../lib/auth-client";
 import type { AppType } from "../../../server";
 
 const client = hc<AppType>("/");
@@ -12,12 +12,13 @@ export const Route = createFileRoute("/todos")({
 });
 
 function RouteComponent() {
-  // const { data: session } = authClient.useSession();
+  const { data: session } = authClient.useSession();
+  const router = useRouter();
 
-  // if (!session) {
-  //   router.navigate({ to: "/signin" });
-  //   return null;
-  // }
+  if (!session) {
+    router.navigate({ to: "/signin" });
+    return null;
+  }
 
   const { data, isError, error, isLoading } = useQuery({
     queryKey: ["todos"],
